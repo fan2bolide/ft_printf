@@ -6,7 +6,7 @@
 /*   By: bajeanno <bajeanno@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:42:41 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/11/25 13:16:47 by bajeanno         ###   ########lyon.fr   */
+/*   Updated: 2022/11/25 13:28:07 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static int	ft_print_value(char c, va_list values)
 		return (write(1, "%", 1));
 	if (c == 's')
 		return (ft_putstr(va_arg(values, char *)));
+	if (c == 'c')
+		return (ft_putchar(va_arg(values, char)));
 	return 0;
 }
 
