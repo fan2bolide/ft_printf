@@ -6,7 +6,7 @@
 /*   By: bajeanno <bajeanno@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:43:00 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/11/26 22:24:20 by bajeanno         ###   ########lyon.fr   */
+/*   Updated: 2022/11/26 22:28:37 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	ft_print_addr(void *ptr);
 size_t	ft_print_int(int nb);
 size_t	ft_print_unsigned(unsigned int nb);
 size_t	ft_print_hexa(int nb);
-size_t	ft_print_HEXA(int nb);
+size_t	ft_print_hexa_capslock(int nb);
 
 size_t	ft_putnbr_base(int nb, char *base);
 size_t	ft_putnbr_base_unsigned(size_t nb, char *base);
