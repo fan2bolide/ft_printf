@@ -6,7 +6,7 @@
 /*   By: bajeanno <bajeanno@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 19:07:25 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/11/25 13:22:05 by bajeanno         ###   ########lyon.fr   */
+/*   Updated: 2022/11/26 22:16:56 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ static int	ft_verif_base(char *str)
 
 size_t	ft_putnbr_base(int nbr, char *base)
 {
-	int	base_length;
-	int	sign;
-	size_t res;
+	int		base_length;
+	int		sign;
+	size_t	res;
 
 	res = 0;
 	sign = 1;
@@ -63,9 +63,9 @@ size_t	ft_putnbr_base(int nbr, char *base)
 
 size_t	ft_putnbr_base_unsigned(size_t nbr, char *base)
 {
-	int	base_length;
-	int	sign;
-	size_t res;
+	size_t	base_length;
+	int		sign;
+	size_t	res;
 
 	res = 0;
 	sign = 1;

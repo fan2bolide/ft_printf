@@ -1,6 +1,7 @@
-NAME = ft_printf.a
+NAME = libftprintf.a
 
-LIB = libft/libft.a
+LIBFT_PATH = ./libft
+LIBFT = $(LIBFT_PATH)/libft.a
 
 SRC			=	ft_printf.c			\
 				ft_print_hexa.c		\
@@ -9,26 +10,24 @@ SRC			=	ft_printf.c			\
 
 OBJ = $(SRC:.c=.o)
 
-BONUS_OBJ = $(BONUS_SRC:.c=.o)
-
-all	: $(NAME) 
+all	: lib $(NAME)
 
 $(NAME): $(OBJ)
+	cp $(LIBFT) $(NAME)
 	ar -rcs $(NAME) $(OBJ)
 
-%.o : %.c Makefile libft.h ft_printf.h
-	cc -Wall -Wextra -Werror -c $<
+%.o : %.c Makefile libft/libft.h ft_printf.h
+	cc -Wall -Wextra -Werror -c $< -I libft
 
-bonus : $(BONUS_OBJ)
-	ar -rcs $(NAME) $(BONUS_OBJ)
+lib : $(LIBFT)
+	make -C $(LIBFT_PATH)
 
 clean:
 	rm -f $(OBJ)
-	rm -f $(BONUS_OBJ)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY : all bonus clean fclean re
+.PHONY : all bonus clean fclean re lib

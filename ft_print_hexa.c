@@ -6,7 +6,7 @@
 /*   By: bajeanno <bajeanno@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 09:25:14 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/11/25 11:58:38 by bajeanno         ###   ########lyon.fr   */
+/*   Updated: 2022/11/26 22:23:38 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_print_hexa(int nb)
 	return (ft_putnbr_base_unsigned((unsigned int)nb, "0123456789abcdef"));
 }
 
-size_t	ft_print_HEXA(int nb)
+size_t	ft_print_hexa_capslock(int nb)
 {
 	return (ft_putnbr_base_unsigned((unsigned int)nb, "0123456789ABCDEF"));
 }

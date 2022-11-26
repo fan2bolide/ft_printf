@@ -6,7 +6,7 @@
 /*   By: bajeanno <bajeanno@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 10:26:53 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/11/25 10:54:19 by bajeanno         ###   ########lyon.fr   */
+/*   Updated: 2022/11/26 22:24:10 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_print_int(int nb)
 
 size_t	ft_print_unsigned(unsigned int nb)
 {
-	size_t res;
+	size_t	res;
 
 	res = 0;
 	if (nb >= 10)

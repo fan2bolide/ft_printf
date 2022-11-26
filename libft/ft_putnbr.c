@@ -6,15 +6,15 @@
 /*   By: bajeanno <bajeanno@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 19:02:04 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/11/25 11:43:44 by bajeanno         ###   ########lyon.fr   */
+/*   Updated: 2022/11/26 22:22:01 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 size_t	ft_putnbr(int nb)
 {
-	size_t res;
+	size_t	res;
 
 	res = 0;
 	if (nb == INT_MIN)
