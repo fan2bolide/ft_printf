@@ -72,16 +72,24 @@ OBJ = $(SRC:.c=.o)
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 
-all	: $(NAME) 
+all	: .mandatory
 
-$(NAME): $(OBJ) $(BONUS_OBJ)
-	ar -rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+.mandatory: $(NAME)
+	touch .mandatory
+	rm -f .bonus
+
+$(NAME): $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 
 %.o : %.c Makefile libft.h
 	cc -Wall -Wextra -Werror -c $<
 
-bonus : $(BONUS_OBJ)
-	ar -rcs $(NAME) $(BONUS_OBJ)
+bonus: .bonus
+
+.bonus: $(OBJ) $(BONUS_OBJ)
+	ar -rcs $(NAME) $(OBJ) $(BONUS_OBJ)
+	touch .bonus
+	rm -f .mandatory
 
 clean:
 	rm -f $(OBJ)

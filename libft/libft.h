@@ -6,7 +6,7 @@
 /*   By: bajeanno <bajeanno@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 13:56:05 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/11/25 13:28:56 by bajeanno         ###   ########lyon.fr   */
+/*   Updated: 2022/11/27 22:15:32 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(const char *s, char c);
 
-size_t	ft_putstr(char const *s);
+int		ft_putstr(char const *s);
 size_t	ft_putendl(char const *s);
 
 char	*ft_strnew(size_t size);

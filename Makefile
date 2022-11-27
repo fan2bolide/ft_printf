@@ -76,6 +76,7 @@ SRC			=	ft_printf.c			\
 				ft_putnbr_base.c	\
 
 OBJ = $(SRC:.c=.o)
+DEPENDS        :=        $(SRC:.c=.d)
 
 all	: lib $(NAME)
 
@@ -83,12 +84,12 @@ $(NAME): $(OBJ) $(LIBFT)
 	cp $(LIBFT) $(NAME)
 	ar -rcs $(NAME) $(OBJ)
 
-%.o : %.c Makefile libft/libft.h ft_printf.h
-	cc -Wall -Wextra -Werror -c $< -I libft
+%.o : %.c Makefile
+	cc -Wall -Wextra -Werror -c $< -MD -I libft
 
 lib : $(LIBFT)
 
-$(LIBFT) : $(LIBFT_SRC)
+$(LIBFT) : $(LIBFT_SRC) libft/libft.h
 	make -C $(LIBFT_PATH)
 
 clean:
@@ -102,3 +103,5 @@ fclean: clean
 re: fclean all
 
 .PHONY : all bonus clean fclean re lib
+
+-include $(DEPENDS)
