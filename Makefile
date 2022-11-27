@@ -95,6 +95,7 @@ $(LIBFT) : $(LIBFT_SRC) libft/libft.h
 clean:
 	make clean -C $(LIBFT_PATH)
 	rm -f $(OBJ)
+	rm -f $(DEPENDS)
 
 fclean: clean
 	make fclean -C $(LIBFT_PATH)
