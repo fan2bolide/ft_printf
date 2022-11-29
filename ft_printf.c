@@ -6,12 +6,11 @@
 /*   By: bajeanno <bajeanno@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:42:41 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/11/27 22:46:23 by bajeanno         ###   ########lyon.fr   */
+/*   Updated: 2022/11/29 16:12:30 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 static int	ft_print_value(char c, va_list *values)
 {
