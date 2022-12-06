@@ -6,7 +6,7 @@
 /*   By: bajeanno <bajeanno@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 14:38:18 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/11/27 22:14:58 by bajeanno         ###   ########lyon.fr   */
+/*   Updated: 2022/12/06 21:13:03 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putstr(char const *str)
 {
 	int	i;
-	int error;
+	int	error;
 
 	i = 0;
 	if (!str)

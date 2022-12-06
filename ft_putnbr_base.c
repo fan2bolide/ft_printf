@@ -6,7 +6,7 @@
 /*   By: bajeanno <bajeanno@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 19:07:25 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/11/27 22:10:18 by bajeanno         ###   ########lyon.fr   */
+/*   Updated: 2022/12/06 22:11:29 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,46 +39,27 @@ static int	ft_verif_base(char *str)
 	return (1);
 }
 
-size_t	ft_putnbr_base(int nbr, char *base)
-{
-	int		base_length;
-	int		sign;
-	size_t	res;
-
-	res = 0;
-	sign = 1;
-	base_length = ft_strlen(base);
-	if (!ft_verif_base(base) || base_length < 2)
-		return (0);
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		sign = -1;
-	}
-	if (nbr >= base_length || (-base_length) >= nbr)
-		res += ft_putnbr_base(nbr / base_length * sign, base);
-	write(1, &base[nbr % base_length * sign], 1);
-	return (++res);
-}
-
-size_t	ft_putnbr_base_unsigned(size_t nbr, char *base)
+int	ft_putnbr_base_unsigned(size_t nbr, char *base)
 {
 	size_t	base_length;
-	int		sign;
 	size_t	res;
+	int		sign;
+	int		error;
 
 	res = 0;
 	sign = 1;
 	base_length = ft_strlen(base);
 	if (!ft_verif_base(base) || base_length < 2)
 		return (0);
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		sign = -1;
-	}
 	if (nbr >= base_length)
-		res += ft_putnbr_base_unsigned(nbr / base_length * sign, base);
-	write(1, &base[nbr % base_length * sign], 1);
-	return (++res);
+	{
+		error = ft_putnbr_base_unsigned(nbr / base_length * sign, base);
+		if (error < 0)
+			return (error);
+		res += error;
+	}
+	error = write(1, &base[nbr % base_length * sign], 1);
+	if (error < 0)
+		return (error);
+	return (res + error);
 }

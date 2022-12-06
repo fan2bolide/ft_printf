@@ -6,7 +6,7 @@
 /*   By: bajeanno <bajeanno@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 16:42:41 by bajeanno          #+#    #+#             */
-/*   Updated: 2022/11/29 16:12:30 by bajeanno         ###   ########lyon.fr   */
+/*   Updated: 2022/12/06 22:11:49 by bajeanno         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,38 +33,44 @@ static int	ft_print_value(char c, va_list *values)
 	return (0);
 }
 
-int	ft_printf(const char *format, ...)
+int	ft_printf2(const char *format, va_list *values)
 {
 	size_t	i;
 	size_t	size;
 	int		error;
-	va_list	values;
 
-	if (!format)
-		return (0);
-	va_start(values, format);
 	size = 0;
 	i = 0;
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			error = ft_print_value(format[++i], &values);
-			if (error != -1)
-				size += error;
-			else
+			error = ft_print_value(format[++i], values);
+			if (error < 0)
 				return (error);
+			size += error;
 		}
 		else
 		{
 			error = write(1, format + i, 1);
-			if (error != -1)
-				size += error;
-			else
+			if (error < 0)
 				return (error);
+			size += error;
 		}
 		i++;
 	}
-	va_end(values);
 	return (size);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list	values;
+	int		res;
+
+	if (!format)
+		return (0);
+	va_start(values, format);
+	res = ft_printf2(format, &values);
+	va_end(values);
+	return (res);
 }
